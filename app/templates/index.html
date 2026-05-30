@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0e1a; color: #e0e6f0; font-family: 'Segoe UI', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { text-align: center; padding: 40px; }
+        h1 { font-size: 2.5rem; color: #4fc3f7; margin-bottom: 10px; letter-spacing: 2px; }
+        .subtitle { font-size: 1rem; color: #78909c; margin-bottom: 40px; }
+        .card { background: #1a2035; border: 1px solid #2a3a5c; border-radius: 12px; padding: 30px 50px; display: inline-block; margin: 10px; min-width: 200px; }
+        .card-label { font-size: 0.75rem; color: #78909c; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .card-value { font-size: 1.5rem; color: #4fc3f7; font-weight: bold; }
+        .status { margin-top: 40px; display: inline-flex; align-items: center; gap: 8px; background: #1a2035; border: 1px solid #2a3a5c; border-radius: 20px; padding: 8px 20px; }
+        .dot { width: 10px; height: 10px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="font-size:64px;margin-bottom:20px">✈️</div>
+        <h1>DEVOPS LAB</h1>
+        <p class="subtitle">ISG Airport — Learning Platform</p>
+        <div>
+            <div class="card"><div class="card-label">Server Time</div><div class="card-value">{{ time }}</div></div>
+            <div class="card"><div class="card-label">Environment</div><div class="card-value">{{ env }}</div></div>
+        </div>
+        <div class="status"><div class="dot"></div><span>Container Running</span></div>
+    </div>
+</body>
+</html>
