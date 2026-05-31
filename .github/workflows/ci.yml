@@ -1,0 +1,23 @@
+﻿name: DevOps Lab CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Kodu çek
+      uses: actions/checkout@v3
+
+    - name: Docker image build et
+      run: docker build -t devops-lab .
+
+    - name: Health check
+      run: |
+        docker run -d -p 5000:5000 --name test-container devops-lab
+        sleep 5
+        curl http://localhost:5000/health
+        docker stop test-container
